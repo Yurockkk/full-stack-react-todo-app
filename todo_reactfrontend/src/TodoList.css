@@ -13,3 +13,8 @@ h2{
 	color: #bdc3c7;
 	font-weight:300;
 }
+
+ul{
+	width: 800px;
+	margin: 0 auto;
+}
