@@ -1,0 +1,18 @@
+{
+  "name": "todoapi",
+  "version": "1.0.0",
+  "description": "restful api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "restful"
+  ],
+  "author": "yubo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4"
+  }
+}
