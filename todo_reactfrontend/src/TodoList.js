@@ -5,7 +5,7 @@ import * as apiCalls from './api.js';
 import './TodoList.css';
 
 class TodoList extends Component {
-  
+
   constructor(props){
     super(props);
     this.state = {
@@ -13,28 +13,28 @@ class TodoList extends Component {
     }
     this.addTodo = this.addTodo.bind(this);
   }
-  
+
   componentWillMount(){
     this.loadTodos();
   }
-  
+
   async loadTodos() {
     let todos = await apiCalls.getTodos();
     this.setState({todos: todos});
   }
-  
+
   async addTodo(todoText){
     // console.log(`ADDING TODO FROM TODO LIST COMPONENT ${todoText}`);
     let newTodo = await apiCalls.createTodo(todoText);
     this.setState({todos: [...this.state.todos, newTodo]})
   }
-  
+
   async deleteTodo(id){
-    await apiCalls.removeTodo(id); 
+    await apiCalls.removeTodo(id);
     const todos = this.state.todos.filter(t => t._id !== id)
     this.setState({todos: todos})
   }
-  
+
   async toggleTodo(todo){
     let updatedTodo = await apiCalls.updateTodo(todo);
     const todos = this.state.todos.map(t => {
@@ -45,9 +45,9 @@ class TodoList extends Component {
     })
     this.setState({todos: todos})
   }
-  
-  
-    
+
+
+
   render() {
     const todos = this.state.todos.map(todo => {
       return (
@@ -59,20 +59,20 @@ class TodoList extends Component {
         />
       );
     });
-    
+
     return (
       <div>
-        <h1>Yubo's<span> Todo List</span></h1>
+        <h1>Todo<span>List</span></h1>
         <h2>A todo list app built with react frontend and node backend</h2>
         <TodoForm addTodo={this.addTodo}/>
         <ul>
           {todos}
         </ul>
       </div>
-      
+
     );
   }
-    
+
 }
 
 export default TodoList;
