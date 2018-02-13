@@ -17,10 +17,10 @@ class TodoForm extends Component {
   }
   
   handleSubmit(e){
-    console.log("handleSubmit fire");
     if (e.key === 'Enter'){
       this.props.addTodo(this.state.inputValue);
       console.log("enter pressed");
+      this.setState({inputValue: ''});
     } 
   }
   
