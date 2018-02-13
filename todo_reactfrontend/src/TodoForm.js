@@ -16,9 +16,12 @@ class TodoForm extends Component {
     this.setState({inputValue: e.target.value});
   }
   
-  handleSubmit(){
-    // console.log(this.state.inputValue);
-    this.props.addTodo(this.state.inputValue);
+  handleSubmit(e){
+    console.log("handleSubmit fire");
+    if (e.key === 'Enter'){
+      this.props.addTodo(this.state.inputValue);
+      console.log("enter pressed");
+    } 
   }
   
   render() {
@@ -30,11 +33,9 @@ class TodoForm extends Component {
         placeholder="Insert your task here..." 
         value={this.state.inputValue} 
         onChange={this.handleChange} 
+        onKeyPress={this.handleSubmit}
         />
         
-        <button 
-        onClick={this.handleSubmit}
-        >
           Add Todo
         </button>
       </div>
