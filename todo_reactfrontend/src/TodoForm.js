@@ -36,8 +36,6 @@ class TodoForm extends Component {
         onKeyPress={this.handleSubmit}
         />
         
-          Add Todo
-        </button>
       </div>
     );
   }
