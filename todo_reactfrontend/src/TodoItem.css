@@ -12,3 +12,15 @@ li:hover{
 	background: rgba(0, 0, 0, .02);
 	cursor: pointer;
 }
+
+li:hover span{
+	opacity: 1;
+}
+
+li span {
+  float: right;
+  color: #c0392b;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
