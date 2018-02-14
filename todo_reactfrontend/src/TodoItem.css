@@ -13,11 +13,11 @@ li:hover{
 	cursor: pointer;
 }
 
-li:hover span{
+li:hover .deleteBtn{
 	opacity: 1;
 }
 
-li span {
+li .deleteBtn {
   float: right;
   color: #c0392b;
   transition: all 0.3s;

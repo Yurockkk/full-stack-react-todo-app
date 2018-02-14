@@ -12,7 +12,7 @@ const TodoItem = ({name, completed, onDelete, onToggle}) => (
       {name}
     </span>
     
-    <span onClick={onDelete}> X </span>
+    <span className="deleteBtn" onClick={onDelete}> X </span>
   </li>
   
 );
